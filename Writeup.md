@@ -472,3 +472,22 @@ summary(df_training)
 ```
 
 
+
+## Step 1
+First observation is that there are large number of columns with no data.
+We can then reduce the set to a much smaller one which will help us to speed up the process. Also many columns have very few rows populated
+We reduce the sets dramatically by using partition which will speed up our process and algorithms.
+
+## Step 2
+Analysing the matrix of correlations we can then select the relevant features.
+
+## Step 3
+We'll need the package caret to predict using random forest.
+
+
+
+
+
+
+
+
