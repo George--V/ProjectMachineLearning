@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta http-equiv="x-ua-compatible" content="IE=9" >
 
-<title>Title Machine Learning Project</title>
+<title>Machine Learning Project</title>
 
 <style type="text/css">
 body, td {
@@ -179,16 +179,15 @@ hljs.initHighlightingOnLoad();
 </head>
 
 <body>
-<h1>Title Machine Learning Project</h1>
+<h1>Machine Learning Project</h1>
 
-<p>This document should fulfill the following requirements:</p>
+<p>Background</p>
 
-<p>The goal of your project is to predict the manner in which they did the exercise. This is the &ldquo;classe&rdquo; variable in the training set. You may use any of the other variables to predict with. You should create a report describing how you built your model, how you used cross validation, what you think the expected out of sample error is, and why you made the choices you did. You will also use your prediction model to predict 20 different test cases. </p>
+<p><em>Using devices such as Jawbone Up, Nike FuelBand, and Fitbit it is now possible to collect a large amount of data about personal activity relatively inexpensively. These type of devices are part of the quantified self movement - a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. One thing that people regularly do is quantify how much of a particular activity they do, but they rarely quantify how well they do it. In this project, your goal will be to use data from accelerometers on the belt, forearm, arm, and dumbell of 6 participants. They were asked to perform barbell lifts correctly and incorrectly in 5 different ways. More information is available from the website here: <a href="http://groupware.les.inf.puc-rio.br/har">http://groupware.les.inf.puc-rio.br/har</a> (see the section on the Weight Lifting Exercise Dataset).</em></p>
 
-<ol>
-<li>Your submission should consist of a link to a Github repo with your R markdown and compiled HTML file describing your analysis. Please constrain the text of the writeup to &lt; 2000 words and the number of figures to be less than 5. It will make it easier for the graders if you submit a repo with a gh-pages branch so the HTML page can be viewed online (and you always want to make it easy on graders :-).</li>
-<li>You should also apply your machine learning algorithm to the 20 test cases available in the test data above. Please submit your predictions in appropriate format to the programming assignment for automated grading. See the programming assignment for additional details.</li>
-</ol>
+<p>Project goal</p>
+
+<p><em>The goal of your project is to predict the manner in which they did the exercise. This is the &ldquo;classe&rdquo; variable in the training set. You may use any of the other variables to predict with. You should create a report describing how you built your model, how you used cross validation, what you think the expected out of sample error is, and why you made the choices you did. You will also use your prediction model to predict 20 different test cases.</em></p>
 
 <p>The data sets for this project can be found here:</p>
 
@@ -753,11 +752,11 @@ names(df_training)
 <p>First observation is that there is a very large number of columns, but many of them have are sparsely populated or not populated at all.
 We should then reduce the set to a much smaller one which will help us to speed up the process. Also many columns have very few rows populated.</p>
 
-<p>We believe that we can come up with a decent prediction algorithm in five steps as follows:</p>
+<p>We believe that we can come up with a decent prediction algorithm in five steps, as follows:</p>
 
 <h2>Step 1</h2>
 
-<p>We reduce the sets dramatically and will use partition which will speed up our process and algorithms.</p>
+<p>We reduce the sets dramatically by subsetting to the columns that are populated, which will speed up our process and algorithms.</p>
 
 <h2>Step 2</h2>
 
@@ -765,16 +764,15 @@ We should then reduce the set to a much smaller one which will help us to speed 
 
 <h2>Step 3</h2>
 
-<p>We use the package caret to do the predictions via Random Forest algorithm, which is our preferred option given the profile of data we are working with.
-We train the model with 60% of the data.</p>
+<p>We use the package caret to do the predictions via Random Forest algorithm, which is our preferred option given the profile of data we are working with. We use partition to train the model with 60% of the data.</p>
 
 <h2>Step 4</h2>
 
-<p>We do the cross-validation of the model on 50% of the remaining data (20% of the total)</p>
+<p>We do the cross-validation of the model on 50% of the remaining data (20% of the total).</p>
 
 <h2>Step 5</h2>
 
-<p>The remaning observations (20% of the total) willl be used to test the model.</p>
+<p>The remaning observations (20% of the total) will be used to test the model.</p>
 
 </body>
 
