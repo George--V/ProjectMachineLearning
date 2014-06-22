@@ -21,10 +21,11 @@ https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv
 The data for this project has been kindly provided by: 
 http://groupware.les.inf.puc-rio.br/har. 
 
+## Explore the data
 
-Let's explore the information provided in the training set.
-
-First, column names:
+First of all we read the documentation provided and open the csv files to
+have an initial view of the data.
+We then check the column names and have a glimpse into the data:
 
 
 ```{r}
@@ -32,23 +33,44 @@ df_training<-read.csv('pml-training.csv')
 names(df_training)
 ```
 
-then, a glimpse into data:
+```{r}
+str(df_training)
+```
 
-```{r fig.width=7, fig.height=6}
+```{r}
 summary(df_training)
 ```
 
+First observation is that there is a very large number of columns, but many of them have are sparsely populated or not populated at all.
+We should then reduce the set to a much smaller one which will help us to speed up the process. Also many columns have very few rows populated.
+
+We believe that we can come up with a decent prediction algorithm in five steps as follows:
 
 ## Step 1
-First observation is that there are large number of columns with no data.
-We can then reduce the set to a much smaller one which will help us to speed up the process. Also many columns have very few rows populated
-We reduce the sets dramatically by using partition which will speed up our process and algorithms.
+
+We reduce the sets dramatically and will use partition which will speed up our process and algorithms.
 
 ## Step 2
-Analysing the matrix of correlations we can then select the relevant features.
+
+By analysing the matrix of correlations we can then select the relevant features.
 
 ## Step 3
-We'll need the package caret to predict using random forest.
+
+We use the package caret to do the predictions via Random Forest algorithm, which is our preferred option given the profile of data we are working with.
+We train the model with 60% of the data.
+
+## Step 4
+
+We do the cross-validation of the model on 50% of the remaining data (20% of the total)
+
+## Step 5
+
+The remaning observations (20% of the total) willl be used to test the model.
+
+
+
+
+
 
 
 
